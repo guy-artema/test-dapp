@@ -73,6 +73,7 @@ const deployCollectiblesButton = document.getElementById(
   'deployCollectiblesButton',
 );
 const mintButton = document.getElementById('mintButton');
+const adminMintButton = document.getElementById('adminMintButton');
 const mintAmountInput = document.getElementById('mintAmountInput');
 const approveTokenInput = document.getElementById('approveTokenInput');
 const approveButton = document.getElementById('approveButton');
@@ -229,6 +230,7 @@ const initialize = async () => {
     withdrawButton,
     deployCollectiblesButton,
     mintButton,
+    adminMintButton,
     mintAmountInput,
     approveTokenInput,
     approveButton,
@@ -342,6 +344,7 @@ const initialize = async () => {
       // ERC721 Token - Collectibles contract
       collectiblesStatus.innerHTML = 'Deployed';
       mintButton.disabled = false;
+      adminMintButton.disabled = false;
       mintAmountInput.disabled = false;
       approveTokenInput.disabled = false;
       approveButton.disabled = false;
@@ -514,6 +517,7 @@ const initialize = async () => {
       );
       collectiblesStatus.innerHTML = 'Deployed';
       mintButton.disabled = false;
+      adminMintButton.disabled = false;
       mintAmountInput.disabled = false;
     };
 
@@ -535,6 +539,26 @@ const initialize = async () => {
       transferTokenInput.disabled = false;
       transferFromButton.disabled = false;
     };
+
+    adminMintButton.onclick = async () => {
+      collectiblesStatus.innerHTML = 'Admin Mint initiated';
+      let result = await collectiblesContract.adminMint(
+        mintAmountInput.value,
+        {
+          from: accounts[0],
+        },
+      );
+      result = await result.wait();
+      console.log(result);
+      collectiblesStatus.innerHTML = 'Mint completed';
+      approveTokenInput.disabled = false;
+      approveButton.disabled = false;
+      setApprovalForAllButton.disabled = false;
+      revokeButton.disabled = false;
+      transferTokenInput.disabled = false;
+      transferFromButton.disabled = false;
+    };
+
 
     approveButton.onclick = async () => {
       collectiblesStatus.innerHTML = 'Approve initiated';
