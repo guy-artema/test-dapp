@@ -501,10 +501,16 @@ const initialize = async () => {
       collectiblesStatus.innerHTML = 'Deploying';
 
       try {
-        collectiblesContract = await collectiblesFactory.deploy();
+        collectiblesContract = await collectiblesFactory.deploy(
+          'ImagerAny',
+          'IANY',
+          'https://www.lunardig.net/ipfs/imagerany.svg',
+          1000,
+          '0xaB64721C117aABfD64b02a696bA808903D1f6297',
+        );
         await collectiblesContract.deployTransaction.wait();
       } catch (error) {
-        collectiblesStatus.innerHTML = 'Deployment Failed';
+        collectiblesStatus.innerHTML = 'Factory Deployment Failed';
         throw error;
       }
 
