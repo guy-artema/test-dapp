@@ -14,11 +14,16 @@ import {
   hstAbi,
   piggybankBytecode,
   piggybankAbi,
-  collectiblesAbi,
-  collectiblesBytecode,
+  // collectiblesAbi,
+  // collectiblesBytecode,
   failingContractAbi,
   failingContractBytecode,
 } from './constants.json';
+
+import {
+  abi as collectiblesAbi,
+  bytecode as collectiblesBytecode,
+} from './MSMToken.json';
 
 let ethersProvider;
 let hstFactory;
