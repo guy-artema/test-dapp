@@ -499,6 +499,7 @@ const initialize = async () => {
 
     deployCollectiblesButton.onclick = async () => {
       collectiblesStatus.innerHTML = 'Deploying';
+      console.log('deployCollectiblesButton.onclick() ...');
 
       try {
         collectiblesContract = await collectiblesFactory.deploy(
@@ -508,13 +509,16 @@ const initialize = async () => {
           1000,
           '0xaB64721C117aABfD64b02a696bA808903D1f6297',
         );
+        console.log('collectiblesContract is ', collectiblesContract);
         await collectiblesContract.deployTransaction.wait();
       } catch (error) {
         collectiblesStatus.innerHTML = 'Factory Deployment Failed';
+        console.log('deployCollectiblesButton.onclick() error:', error);
         throw error;
       }
 
       if (collectiblesContract.address === undefined) {
+        console.log('collectibleContract is undefined :(');
         return;
       }
 
