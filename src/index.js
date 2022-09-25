@@ -542,12 +542,9 @@ const initialize = async () => {
 
     adminMintButton.onclick = async () => {
       collectiblesStatus.innerHTML = 'Admin Mint initiated';
-      let result = await collectiblesContract.adminMint(
-        mintAmountInput.value,
-        {
-          from: accounts[0],
-        },
-      );
+      let result = await collectiblesContract.adminMint(mintAmountInput.value, {
+        from: accounts[0],
+      });
       result = await result.wait();
       console.log(result);
       collectiblesStatus.innerHTML = 'Mint completed';
@@ -558,7 +555,6 @@ const initialize = async () => {
       transferTokenInput.disabled = false;
       transferFromButton.disabled = false;
     };
-
 
     approveButton.onclick = async () => {
       collectiblesStatus.innerHTML = 'Approve initiated';
