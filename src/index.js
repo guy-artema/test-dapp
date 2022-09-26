@@ -505,7 +505,7 @@ const initialize = async () => {
         collectiblesContract = await collectiblesFactory.deploy(
           'ImagerAny',
           'IANY',
-          'https://lunardig.net/ipfs/pin?address=1',
+          'https://lunardig.net/ipfs/pin.123456789abcdef0123456789abcdef0.json',
           1000,
           '0xaB64721C117aABfD64b02a696bA808903D1f6297',
         );
