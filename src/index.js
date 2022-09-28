@@ -944,7 +944,6 @@ const initialize = async () => {
       });
       personalSignResult.innerHTML = sign;
       console.error('setting personalSign innerHTML to SIGN');
-      personalSign.innerHTML = `PERSONAL SIGN`;
       personalSignVerify.disabled = false;
     } catch (err) {
       console.error(err);
