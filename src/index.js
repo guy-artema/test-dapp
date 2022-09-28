@@ -943,7 +943,8 @@ const initialize = async () => {
         params: [msg, from, 'Example password'],
       });
       personalSignResult.innerHTML = sign;
-      personalSign.innerHTML = `SIGN`;
+      console.error('setting personalSign innerHTML to SIGN');
+      personalSign.innerHTML = `PERSONAL SIGN`;
       personalSignVerify.disabled = false;
     } catch (err) {
       console.error(err);
