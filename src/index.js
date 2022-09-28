@@ -940,7 +940,7 @@ const initialize = async () => {
       const msg = `0x${Buffer.from(exampleMessage, 'utf8').toString('hex')}`;
       const sign = await ethereum.request({
         method: 'personal_sign',
-        params: [msg, from, 'Example password'],
+        params: [msg, from, 'Example clef password'],
       });
       personalSignResult.innerHTML = sign;
       console.error('setting personalSign innerHTML to SIGN');
