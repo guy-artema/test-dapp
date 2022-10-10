@@ -478,7 +478,7 @@ const initialize = async () => {
               from: accounts[0],
               to: failingContract.address,
               value: '0x0',
-              gasLimit: '0x5028',
+              gasLimit: '0x5208',
               maxFeePerGas: '0x2540be400',
               maxPriorityFeePerGas: '0x3b9aca00',
             },
@@ -633,9 +633,9 @@ const initialize = async () => {
         params: [
           {
             from: accounts[0],
-            to: '0x0c54FcCd2e384b4BB6f2E405Bf5Cbc15a017AaFb',
+            to: '0xeAA3c46Df6B5CebA10244Dbd7dA59E3Fa89C0Cff',
             value: '0x0',
-            gasLimit: '0x5028',
+            gasLimit: '0x5208',
             gasPrice: '0x2540be400',
             type: '0x0',
           },
@@ -650,9 +650,9 @@ const initialize = async () => {
         params: [
           {
             from: accounts[0],
-            to: '0x0c54FcCd2e384b4BB6f2E405Bf5Cbc15a017AaFb',
+            to: '0xeAA3c46Df6B5CebA10244Dbd7dA59E3Fa89C0Cff',
             value: '0x0',
-            gasLimit: '0x5028',
+            gasLimit: '0x5208',
             maxFeePerGas: '0x2540be400',
             maxPriorityFeePerGas: '0x3b9aca00',
           },
