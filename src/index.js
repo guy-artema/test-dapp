@@ -478,7 +478,7 @@ const initialize = async () => {
               from: accounts[0],
               to: failingContract.address,
               value: '0x0',
-              gasLimit: '0x5208',
+              gasLimit: '0x5308',
               maxFeePerGas: '0x2540be400',
               maxPriorityFeePerGas: '0x3b9aca00',
             },
